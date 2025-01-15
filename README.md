@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+# React Native Data Table Application 📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This application is an assignment project for **Supersymmetry Software**.
 
-## Get started
+---
 
-1. Install dependencies
+## 📝 Assignment Details
 
-   ```bash
-   npm install
-   ```
+Your task is to create a React Native application featuring a data table that:
 
-2. Start the app
+- Fetches user data from an API.
+- Displays information such as name, age, date of birth, and a checkbox.
+- Includes search and sorting functionality for each column.
 
-   ```bash
-    npx expo start
-   ```
+Additionally, you should be ready to explain every line of code.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Follow these steps to set up and run the application:
 
-## Get a fresh project
+### 1. Install Dependencies
 
-When you're ready, run:
+Run the following command to install all required dependencies:
 
 ```bash
-npm run reset-project
-```
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Start the Application
 
-## Learn more
+Start the app using Expo:
 
-To learn more about developing your project with Expo, look at the following resources:
+npx expo start
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Options to Open the App:
 
-## Join the community
+	•	Development Build: Use for full-featured app development.
+	•	Android Emulator: Test the app on an Android emulator.
+	•	iOS Simulator: Test the app on an iOS simulator.
+	•	Expo Go: A sandbox environment for previewing app development.
 
-Join our community of developers creating universal apps.
+🌐 API Details
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app fetches user data from the JSONPlaceholder API. This provides mock data for development and testing.
+
+🏗 Application Architecture
+
+The project follows an Atomic Design Structure, organized into:
+	•	Atoms: Basic UI components (e.g., buttons, checkboxes).
+	•	Molecules: Combinations of atoms (e.g., input fields with labels).
+	•	Organisms: Complex components composed of atoms and molecules (e.g., data table).
+
+You can find all the components in the components/atoms, components/molecules, and components/organisms directories.
+
+✨ Features
+
+	1.	Data Table:
+	•	Displays user data including name, age, date of birth, and a checkbox.
+	•	Provides search functionality to filter rows.
+	•	Allows sorting for each column in ascending or descending order.
+	2.	Reusable Components:
+	•	Built with modular and reusable components for scalability.
+	3.	API Integration:
+	•	Fetches user data dynamically using a custom hook.
+
+Start exploring the code and customize the application as needed! Happy coding! 😊
+
