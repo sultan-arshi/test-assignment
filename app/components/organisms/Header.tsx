@@ -1,9 +1,10 @@
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
+import { User } from "@/app/types/types";
 
 interface HeaderProps {
-  sortOrder: { column: string | null; ascending: boolean };
-  onSort: (column: string) => void;
+  sortOrder: { column: keyof User | null; ascending: boolean };
+  onSort: (column: keyof User) => void;
 }
 
 
@@ -12,7 +13,7 @@ interface HeaderProps {
  * Displays sortable column headers.
  */
 const Header: React.FC<HeaderProps> = ({ sortOrder, onSort }) => {
-  const columns = ['name', 'age', 'dob'];
+  const columns: (keyof User)[]= ['name', 'age', 'dob'];
 
   return (
     <View style={styles.header}>

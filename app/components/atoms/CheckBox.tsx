@@ -24,7 +24,7 @@ const CheckBox = (props: CheckBoxProps) => {
     return (
         <TouchableOpacity style={styles.container} onPress={props.onPress}>
             <View style={styles.checkbox}>
-                {props.checked && <Entypo name="check" size={props.size ?? 19} />}
+                {props.checked && <Entypo name="check" size={19} />}
             </View>
         </TouchableOpacity>
     )
@@ -36,8 +36,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 4,
         borderColor: 'gray',
+        width: 22,
+        height: 22,
+        padding: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     checkbox: {
+        backgroundColor: 'white',
     },
 })
 
