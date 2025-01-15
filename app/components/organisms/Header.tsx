@@ -38,24 +38,6 @@ const Header: React.FC<HeaderProps> = ({ sortOrder, onSort }) => {
   );
 };
 
-// const Header: React.FC<HeaderProps> = ({ sortOrder, onSort }) => {
-//   return (
-//     <View style={styles.headerRow}>
-//       {['name', 'age', 'dob'].map((column) => (
-//         <TouchableOpacity key={column} onPress={() => onSort(column)} style={styles.headerCell}>
-//           <Text style={styles.headerText}>
-//             {column.toUpperCase()}
-//             {sortOrder.column === column &&
-
-//             }
-//           </Text>
-//         </TouchableOpacity>
-//       ))}
-//       <Text style={styles.headerCell}>Select</Text>
-//     </View>
-//   );
-// };
-
 const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
@@ -63,6 +45,7 @@ const styles = StyleSheet.create({
     padding: 8,
     borderBottomWidth: 1,
     borderColor: '#dee2e6',
+    marginBottom: 20
   },
   headerCell: {
     flex: 1,

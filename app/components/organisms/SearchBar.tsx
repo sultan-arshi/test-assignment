@@ -5,13 +5,14 @@ import { TextInput, StyleSheet, View } from 'react-native';
 interface SearchBarProps {
     query: string;
     onSearch: (query: string) => void;
+    onFilterPress: () => void;
 }
 
 /**
  * SearchBar Component
  * Displays an input for filtering the table data.
  */
-const SearchBar: React.FC<SearchBarProps> = ({ query, onSearch }) => (
+const SearchBar: React.FC<SearchBarProps> = ({ query, onSearch, onFilterPress }) => (
     <View style={styles.container}>
         <View style={styles.inputContainer}>
         <TextInput
@@ -21,7 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, onSearch }) => (
             onChangeText={onSearch}
         />
         </View>
-        <Ionicons name='filter' size={25} />
+        <Ionicons name='filter' size={25} onPress={onFilterPress}/>
     </View>
 );
 
@@ -36,19 +37,20 @@ const styles = StyleSheet.create({
     inputContainer: {
         borderWidth: 1,
         borderRadius: 20,
+        borderColor: 'gray',
+        flex: 1,
+        backgroundColor: "#FFF",
         paddingHorizontal: 12,
+        height: 40,
         shadowColor: "black",
         shadowOffset: {
             width: 0,
-            height: 3,
+            height: 2,
         },
-        shadowOpacity: 3,
-        shadowRadius: 3,
-        flex: 1,
-        backgroundColor: "#FFF",
+        shadowOpacity: 0.5,
+        shadowRadius: 3
     },
     input: {
-        height: 40,
         flex: 1,
     },
 });
