@@ -6,35 +6,61 @@ interface HeaderProps {
   onSort: (column: string) => void;
 }
 
+
 /**
  * Header Component
- * @param {Object} props - Component props
- * @param {Object} props.sortOrder - Current sort order state
- * @param {Function} props.onSort - Callback to handle sorting
+ * Displays sortable column headers.
  */
 const Header: React.FC<HeaderProps> = ({ sortOrder, onSort }) => {
+  const columns = ['name', 'age', 'dob'];
+
   return (
-    <View style={styles.headerRow}>
-      {['name', 'age', 'dob'].map((column) => (
-        <TouchableOpacity key={column} onPress={() => onSort(column)} style={styles.headerCell}>
+    <View style={styles.header}>
+      {columns.map((column) => (
+        <TouchableOpacity
+          key={column}
+          style={styles.headerCell}
+          onPress={() => onSort(column)}
+        >
           <Text style={styles.headerText}>
             {column.toUpperCase()}
-            {sortOrder.column === column &&
-              <Ionicons name={sortOrder.ascending ? 'arrow-up' : 'arrow-down'} size={16} color="black" />
-            }
+            {sortOrder.column === column && (
+               <Ionicons
+                name={sortOrder.ascending ? 'arrow-up' : 'arrow-down'}
+                size={16}
+                color="black" />
+            )}
           </Text>
         </TouchableOpacity>
       ))}
-      <Text style={styles.headerCell}>Select</Text>
+      <Text style={styles.headerCell}>SELECT</Text>
     </View>
   );
 };
 
+// const Header: React.FC<HeaderProps> = ({ sortOrder, onSort }) => {
+//   return (
+//     <View style={styles.headerRow}>
+//       {['name', 'age', 'dob'].map((column) => (
+//         <TouchableOpacity key={column} onPress={() => onSort(column)} style={styles.headerCell}>
+//           <Text style={styles.headerText}>
+//             {column.toUpperCase()}
+//             {sortOrder.column === column &&
+
+//             }
+//           </Text>
+//         </TouchableOpacity>
+//       ))}
+//       <Text style={styles.headerCell}>Select</Text>
+//     </View>
+//   );
+// };
+
 const styles = StyleSheet.create({
-  headerRow: {
+  header: {
     flexDirection: 'row',
-    paddingVertical: 8,
     backgroundColor: '#e9ecef',
+    padding: 8,
     borderBottomWidth: 1,
     borderColor: '#dee2e6',
   },
