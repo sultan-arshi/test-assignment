@@ -2,6 +2,7 @@ import { FlatList, SafeAreaView, StyleSheet, Text } from "react-native";
 import Header from "./components/Header";
 import { useState } from "react";
 import { User } from "./types/type";
+import SearchBar from "./components/SearchBar";
 
 export default function Index() {
 
@@ -15,6 +16,7 @@ const Home = () => {
 
   const [data, setData] = useState<User[]>([]); // data to render
   const [sortOrder, setSortOrder] = useState({ column: null, ascending: true }); // Sorting state
+  const [searchQuery, setSearchQuery] = useState<string>(''); // Search query
 
 
 /**
@@ -24,10 +26,20 @@ const Home = () => {
   const handleSort = (column: string) => {
   };
 
+   /**
+   * Filters the data based on the search query.
+   * @param query - In search input.
+   */
+  const handleSearch = (query: string) => {
+    // process search
+    setSearchQuery(query)
+
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Search Bar */}
-      
+      <SearchBar query={searchQuery} onSearch={handleSearch} />
       {/* Header */}
       <Header sortOrder={sortOrder} onSort={handleSort} />
 
